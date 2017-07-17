@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * The result of a pack call
  */
-public class BookingAvailableDateList {
+public class BookingPackItem {
     private int departureId;
     private int numberOfDays;
 
@@ -18,12 +18,12 @@ public class BookingAvailableDateList {
     @SerializedName("dates")
     List<BookingItem> listOfSlots;
 
-    static BookingAvailableDateList create(int departureId, int numberOfDays, String jsonResponse) {
+    public static BookingPackItem create(int departureId, int numberOfDays, String jsonResponse) {
         Gson gson = new Gson();
-        BookingAvailableDateList bookingAvailableDateList = gson.fromJson(jsonResponse, BookingAvailableDateList.class);
-        bookingAvailableDateList.departureId = departureId;
-        bookingAvailableDateList.numberOfDays = numberOfDays;
-        return bookingAvailableDateList;
+        BookingPackItem bookingPackItem = gson.fromJson(jsonResponse, BookingPackItem.class);
+        bookingPackItem.departureId = departureId;
+        bookingPackItem.numberOfDays = numberOfDays;
+        return bookingPackItem;
     }
 
     public int getDepartureId() {

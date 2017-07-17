@@ -43,21 +43,21 @@ public class BookingAvailableDateListTest {
 
     @Test
     public void testTheDepartureIdIsTheInsertedAsParameter() throws Exception {
-        BookingAvailableDateList bookingAvailableDateList = BookingAvailableDateList.create(1, 2, "{}");
+        BookingPackItem bookingAvailableDateList = BookingPackItem.create(1, 2, "{}");
         Assert.assertEquals(bookingAvailableDateList.getDepartureId(), 1);
     }
 
     @Test
     public void testTheNumberOfDaysIsTheInsertedAsParameter() throws Exception {
-        BookingAvailableDateList bookingAvailableDateList = BookingAvailableDateList.create(1, 2, "{}");
+        BookingPackItem bookingAvailableDateList = BookingPackItem.create(1, 2, "{}");
         Assert.assertEquals(bookingAvailableDateList.getNumberOfDays(), 2);
     }
 
     @Test
     public void testErrorIscorrectlyParsedFromJson() throws Exception {
-        BookingAvailableDateList bookingAvailableDateList = BookingAvailableDateList.create(1, 2, jsonString1);
+        BookingPackItem bookingAvailableDateList = BookingPackItem.create(1, 2, jsonString1);
         Assert.assertEquals(bookingAvailableDateList.isError(), false);
-        BookingAvailableDateList bookingAvailableDateList2 = BookingAvailableDateList.create(1, 2, jsonString2);
+        BookingPackItem bookingAvailableDateList2 = BookingPackItem.create(1, 2, jsonString2);
         Assert.assertEquals(bookingAvailableDateList2.isError(), true);
     }
 }

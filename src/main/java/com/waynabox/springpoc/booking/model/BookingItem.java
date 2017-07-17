@@ -6,19 +6,44 @@ import com.google.gson.annotations.SerializedName;
  * .
  */
 public class BookingItem {
-    int id;
+
+    private int id;
 
     @SerializedName("from")
-    String fromDate;
+    private String fromDate;
 
     @SerializedName("to")
-    String toDate;
+    private String toDate;
 
     @SerializedName("avail")
-    boolean available;
+    private boolean available;
 
     @SerializedName("level")
-    int priceLevel;
+    private int priceLevel;
 
-    int price;
+    private int price;
+
+    public String getFromDate() {
+        return fromDate;
+    }
+
+    public String getToDate() {
+        return toDate;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public int getPriceLevel() {
+        return priceLevel;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
