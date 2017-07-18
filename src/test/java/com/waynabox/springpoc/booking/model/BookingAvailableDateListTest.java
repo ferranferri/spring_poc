@@ -1,5 +1,6 @@
 package com.waynabox.springpoc.booking.model;
 
+import com.waynabox.springpoc.booking.domain.BookingPackItem;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

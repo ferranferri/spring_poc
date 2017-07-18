@@ -1,6 +1,4 @@
-package com.waynabox.springpoc.booking.model;
-
-import com.waynabox.springpoc.booking.service.BookingConnection;
+package com.waynabox.springpoc.booking.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +8,8 @@ import java.util.List;
  */
 public class BookingDatesList {
     private double timeTook;
-    private long initialTime;
+
+    private transient long initialTime;
     private List<BookingPackItem> bookingPacks;
 
     public void addBookingAvailableDateList(BookingPackItem dateList) {

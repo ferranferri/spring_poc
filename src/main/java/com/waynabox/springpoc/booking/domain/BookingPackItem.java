@@ -1,6 +1,7 @@
-package com.waynabox.springpoc.booking.model;
+package com.waynabox.springpoc.booking.domain;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -16,7 +17,8 @@ public class BookingPackItem {
     private boolean error;
 
     @SerializedName("dates")
-    List<BookingItem> listOfSlots;
+    @Expose
+    private List<BookingItem> dates;
 
     public static BookingPackItem create(int departureId, int numberOfDays, String jsonResponse) {
         Gson gson = new Gson();
@@ -38,7 +40,15 @@ public class BookingPackItem {
         return error;
     }
 
-    public List<BookingItem> getListOfSlots() {
-        return listOfSlots;
+    public List<BookingItem> getDates() {
+        return dates;
+    }
+
+    public void setDepartureId(int departureId) {
+        this.departureId = departureId;
+    }
+
+    public void setNumberOfDays(int numberOfDays) {
+        this.numberOfDays = numberOfDays;
     }
 }

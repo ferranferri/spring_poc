@@ -1,4 +1,4 @@
-package com.waynabox.springpoc.greeting;
+package com.waynabox.springpoc.greeting.domain;
 
 /**
  * gretting

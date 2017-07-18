@@ -1,5 +1,6 @@
-package com.waynabox.springpoc.booking.model;
+package com.waynabox.springpoc.booking.domain;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -10,29 +11,31 @@ public class BookingItem {
     private int id;
 
     @SerializedName("from")
-    private String fromDate;
+    @Expose
+    private String from;
 
     @SerializedName("to")
-    private String toDate;
+    @Expose
+    private String to;
 
     @SerializedName("avail")
-    private boolean available;
+    private boolean avail;
 
     @SerializedName("level")
     private int priceLevel;
 
     private int price;
 
-    public String getFromDate() {
-        return fromDate;
+    public String getFrom() {
+        return from;
     }
 
-    public String getToDate() {
-        return toDate;
+    public String getTo() {
+        return to;
     }
 
     public boolean isAvailable() {
-        return available;
+        return avail;
     }
 
     public int getPriceLevel() {

@@ -1,8 +1,8 @@
-package com.waynabox.springpoc.booking.usecase;
+package com.waynabox.springpoc.booking.domain.usecase;
 
-import com.waynabox.springpoc.booking.model.BookingPackItem;
-import com.waynabox.springpoc.booking.model.BookingDatesList;
-import com.waynabox.springpoc.booking.service.BookingConnection;
+import com.waynabox.springpoc.booking.domain.BookingPackItem;
+import com.waynabox.springpoc.booking.domain.service.BookingConnection;
+import com.waynabox.springpoc.booking.domain.BookingDatesList;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import java.util.ArrayList;

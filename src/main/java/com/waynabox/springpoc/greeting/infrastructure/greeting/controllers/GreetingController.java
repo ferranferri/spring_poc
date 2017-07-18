@@ -1,5 +1,6 @@
-package com.waynabox.springpoc.greeting;
+package com.waynabox.springpoc.greeting.infrastructure.greeting.controllers;
 
+import com.waynabox.springpoc.greeting.domain.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

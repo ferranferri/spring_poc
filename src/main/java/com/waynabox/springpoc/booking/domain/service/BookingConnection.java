@@ -1,4 +1,4 @@
-package com.waynabox.springpoc.booking.service;
+package com.waynabox.springpoc.booking.domain.service;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -16,7 +16,7 @@ public class BookingConnection {
 
     private final static Logger log = Logger.getLogger(BookingConnection.class.getName());
 
-    private final static String URL_CALL = "https://waynabox.com/es/api/packs?departureId=%s&days=%s";
+    protected final static String URL_CALL = "https://waynabox.com/es/api/packs?departureId=%s&days=%s";
 
     protected final static int[] AVAILABLE_DAYS = {3, 5};
     protected final static int[] AVAILABLE_DEPARTURE_IDS = {3, 13, 15, 16, 29, 31, 64};
