@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.waynabox")
+@ComponentScan("com.waynabox.springpoc")
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

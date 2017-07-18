@@ -1,7 +1,8 @@
 package com.waynabox.springpoc.booking.infrastructure.controllers;
 
 import com.waynabox.springpoc.booking.domain.BookingDatesList;
-import com.waynabox.springpoc.booking.domain.usecase.SingleThreadedBookingCaller;
+import com.waynabox.springpoc.booking.domain.service.BookingCaller;
+import com.waynabox.springpoc.booking.domain.service.BookingCallerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,8 @@ public class BokingControllerSingle {
 
     @RequestMapping(value = "/booking", method = GET)
     public BookingDatesList makeBookingCall() {
-        return new SingleThreadedBookingCaller().exploreDates();
+        BookingCaller bookingCaller = BookingCallerFactory.create(BookingCallerFactory.Strategy.SINGLE_THREAD);
+        return bookingCaller.exploreDates();
     }
 
 }

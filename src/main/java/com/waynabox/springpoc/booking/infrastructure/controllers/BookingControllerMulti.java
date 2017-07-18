@@ -1,7 +1,8 @@
 package com.waynabox.springpoc.booking.infrastructure.controllers;
 
 import com.waynabox.springpoc.booking.domain.BookingDatesList;
-import com.waynabox.springpoc.booking.domain.usecase.MultiThreadedBookingCaller;
+import com.waynabox.springpoc.booking.domain.service.BookingCaller;
+import com.waynabox.springpoc.booking.domain.service.BookingCallerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ public class BookingControllerMulti {
 
     @RequestMapping(value = "/booking_multi", method = GET)
     public BookingDatesList makeBookingCallMulti() {
-        return new MultiThreadedBookingCaller().exploreDates();
+        BookingCaller bookingCaller = BookingCallerFactory.create(BookingCallerFactory.Strategy.MULTI_THREAD);
+        return bookingCaller.exploreDates();
     }
 }

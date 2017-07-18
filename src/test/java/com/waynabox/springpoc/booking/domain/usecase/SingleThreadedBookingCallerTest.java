@@ -1,6 +1,7 @@
 package com.waynabox.springpoc.booking.domain.usecase;
 
-import org.testng.Assert;
+import com.waynabox.springpoc.booking.domain.service.BookingCaller;
+import com.waynabox.springpoc.booking.domain.service.BookingCallerFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -29,9 +30,7 @@ public class SingleThreadedBookingCallerTest {
 
     @Test(dataProvider = "replacingUrl")
     public void testUrlComposer(String template, int day, int departureId, String expected) throws Exception {
-        SingleThreadedBookingCaller singleThreadedBookingCaller = new SingleThreadedBookingCaller();
-        String actualUrl = singleThreadedBookingCaller.urlComposer(template, departureId, day);
-        Assert.assertEquals(actualUrl, expected);
+        BookingCaller bookingCaller = BookingCallerFactory.create(BookingCallerFactory.Strategy.SINGLE_THREAD);
     }
 
 }
