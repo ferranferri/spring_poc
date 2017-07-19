@@ -12,21 +12,8 @@ import java.util.List;
 public class BookingPackItem {
     private int departureId;
     private int numberOfDays;
-
-    @SerializedName("error")
     private boolean error;
-
-    @SerializedName("dates")
-    @Expose
     private List<BookingItem> dates;
-
-    public static BookingPackItem create(int departureId, int numberOfDays, String jsonResponse) {
-        Gson gson = new Gson();
-        BookingPackItem bookingPackItem = gson.fromJson(jsonResponse, BookingPackItem.class);
-        bookingPackItem.departureId = departureId;
-        bookingPackItem.numberOfDays = numberOfDays;
-        return bookingPackItem;
-    }
 
     public int getDepartureId() {
         return departureId;
